@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://kit.fontawesome.com/ff9fa8af09.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="p-5 w-full fixed flex flex-row justify-between bg-red-300">
+            <h1>Seongjin</h1>
+            <nav>
+                <ul class=" flex flex-row space-x-7 mr-5">
+                    <li>
+                        <button
+                            data-animation-scroll="true"
+                            data-target="#About"
+                        >
+                            About
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            data-animation-scroll="true"
+                            data-target="#Skill"
+                        >
+                            Skill
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            data-animation-scroll="true"
+                            data-target="#PortFolio"
+                        >
+                            PortFolio
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            data-animation-scroll="true"
+                            data-target="#Contact"
+                        >
+                            Contact
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main" class="w-full h-screen flex flex-row items-center justify-center bg-[url(./image/milkyway.avif)] bg-no-repeat bg-cover text-white">
+            <section>
+                <h2 class="text-7xl bold ">I'M A Front-End Developer</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, at!</p>
+            </section>
+        </main>
+        <!-- About Me -->
+        <section class="py-16 w-full bg-white text-black">
+            <div class="px-7 mb-5">
+                <h2 class="text-5xl mb-5">About ME</h2>
+                <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem explicabo molestiae laborum rerum sit porro quidem. Dolore porro perspiciatis ab dicta, ipsa doloribus veritatis fugiat consequuntur odit asperiores? Deleniti, eius.</h3>
+            </div>
+            <div class="px-7 flex">
+                <div class="w-1/2">
+                    <img class="" src="./image/milkyway.avif" alt="사진">
+                </div>
+                <div class='w-1/2 px-5 flex flex-col '>
+                    <h4 class="text-3xl bold text-sky-700">hello</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium delectus at excepturi magni omnis iure enim explicabo numquam vel temporibus aperiam doloremque beatae eligendi assumenda consectetur, repellat ea. Harum, similique.</p>
+                </div>
+            </div>
+        </section>
+        <!-- skill -->
+        <section class="py-16 px-7 w-full bg-slate-300 text-black">
+            <div>
+                <h2 class="text-5xl bold mb-5">My skill</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <ul>
+                <li class="w-1/3 p-7 bg-white inline-block mr-16 mt-4">
+                    <div>
+                        <i class="text-5xl text-orange-600 fa-brands fa-html5"></i>
+                    </div>
+                    <div>
+                        <h3>HTML</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, ipsam.</p>
+                    </div>
+                </li>
+                <li class="w-1/3 p-7 bg-white inline-block mr-16 mt-4">
+                    <div>
+                        <i class="text-5xl text-orange-600 fa-brands fa-css3-alt"></i>
+                    </div>
+                    <div>
+                        <h3>css</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, ipsam.</p>
+                    </div>
+                </li>
+                <li class="w-1/3 p-7 bg-white inline-block mr-16 mt-4">
+                    <div>
+                        <i class="text-5xl text-orange-600 fa-brands fa-js"></i>
+                    </div>
+                    <div>
+                        <h3>JavaScript</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, ipsam.</p>
+                    </div>
+                </li>
+                <li class="w-1/3 p-7 bg-white inline-block mr-16 mt-4">
+                    <div>
+                        <i class="text-5xl text-orange-600 fa-brands fa-react"></i>
+                    </div>
+                    <div>
+                        <h3>React</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, ipsam.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!-- portfolio -->
+        <section class="py-16 px-7 w-full bg-white text-black">
+            <div>
+                <h2 class="text-5xl bold mb-5">PortFolio</h2>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <ul class="grid grid-cols-3 gap-10 mt-5">
+                <li>
+                    <img src="./image/mock1.png" alt="">
+                    <h3 class="mb-3">프로젝트1</h3>
+                    <strong>제목</strong>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, inventore!</p>
+                </li>
+                <li>
+                    <img src="./image/mock2.png" alt="">
+                    <h3 class="mb-3">프로젝트2</h3>
+                    <strong>제목</strong>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, inventore!</p>
+                </li>
+                <li>
+                    <img src="./image/mock3.png" alt="">
+                    <h3 class="mb-3">프로젝트3</h3>
+                    <strong>제목</strong>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, inventore!</p>
+                </li>
+                <li>
+                    <img src="./image/mock4.png" alt="">
+                    <h3 class="mb-3">프로젝트4</h3>
+                    <strong>제목</strong>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, inventore!</p>
+                </li>
+                <li>
+                    <img src="./image/mock5.png" alt="">
+                    <h3 class="mb-3">프로젝트5</h3>
+                    <strong>제목</strong>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, inventore!</p>
+                </li>
+                <li>
+                    <img src="./image/mock6.png" alt="">
+                    <h3 class="mb-3">프로젝트6</h3>
+                    <strong>제목</strong>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, inventore!</p>
+                </li>
+               
+            </ul>
+        </section>
+        <footer>
+
+        </footer>
+    </body>
+</html>

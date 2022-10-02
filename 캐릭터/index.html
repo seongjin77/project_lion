@@ -25,7 +25,6 @@
             body {
                 width: 100vw;
                 height: 100vh;
-                /* background-color:  #0250c5; */
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-image: linear-gradient(
@@ -82,14 +81,14 @@
                 border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
                 border: 10px solid #000;
                 position: absolute;
-                top: -6px;
+                top: -9px;
                 right: -11px;
                 z-index: 1;
             }
             /* 눈 */
             .eye {
-                width: 30px;
-                height: 30px;
+                width: 39px;
+                height: 51px;
                 background-color: black;
                 border-radius: 50%;
                 position: absolute;
@@ -110,17 +109,88 @@
                 z-index: 3;
             }
 
-            .eye.right .cyber_eye{
+            .eye.right .cyber_eye {
                 width: 100px;
                 height: 100px;
-                background-color: #36BC9B;
+                background-color: #36bc9b;
                 border-radius: 50%;
                 border: 7px solid #000;
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%,-50%);
-                box-shadow: ;
+                transform: translate(-50%, -50%);
+            }
+            /* 코 */
+            .nose {
+                width: 50px;
+                height: 50px;
+                background-color: black;
+                position: absolute;
+                border-radius: 50%;
+                border: 1px solid #000;
+                top: 227px;
+                left: 191px;
+                z-index: 10;
+            }
+            /* 입 */
+            .mouth {
+                /* width: 100px;
+                height: 100px;
+                background-color: dodgerblue;
+                position: absolute;
+                top: 200px;
+                left: 117px;
+                border-radius: 50%; */
+                position: relative;
+                width: 160px;
+                height: 100px;
+                /* background-color: dodgerblue; */
+
+                transform: translateX(-50%);
+                left: 50%;
+                top: 200px;
+            }
+            .mouth.left {
+                width: 80px;
+                height: 100px;
+                background-color: var(--main);
+                position: absolute;
+                transform: translateX(0%);
+                left: 10px;
+                top: 0;
+                border-radius: 50%;
+                border: 10px solid black;
+                z-index: 5;
+            }
+
+            .mouth.right {
+                width: 80px;
+                height: 100px;
+                background-color: var(--main);
+                position: absolute;
+                transform: translateX(0%);
+                left: 72px;
+                top: 0;
+                border-radius: 50%;
+                border: 10px solid #000;
+                z-index: 5;
+            }
+            .hidden {
+                width: 200px;
+                height: 70px;
+                background-color: #36bc9b;
+                position: absolute;
+                background-color: var(--main);
+                z-index: 10;
+            }
+            .mouthbottom {
+                width: 100px;
+                height: 200px;
+                background-color: #fe85ac;
+                position: absolute;
+                border-radius: 50%;
+                border: 10px solid black;
+                left: 30px;
             }
         </style>
     </head>
@@ -131,10 +201,18 @@
             <div class="face">
                 <div class="eye left"></div>
                 <div class="eye right">
-                    <div class="cyber_eye"></div>
+                    <div class="cyber_eye">
+                        <span></span>
+                    </div>
                 </div>
-                <div class="mouth"></div>
                 <div class="custom"></div>
+                <div class="nose"></div>
+                <div class="mouth">
+                    <div class="mouth left"></div>
+                    <div class="mouth right"></div>
+                    <div class="mouthbottom"></div>
+                    <div class="hidden"></div>
+                </div>
             </div>
         </div>
     </body>
