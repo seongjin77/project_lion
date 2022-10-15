@@ -17,6 +17,7 @@
     console.log(result2);
     //3.
     let str ='5, 4, 10, 2, 5';
+    console.log('확인확인확인 '+ str.split(', '));
     let change = str.split(', ').map(x => parseInt(x)).reduce((a,b)=> a+b,0)/5
     console.log(change);
     //4. 각 자리의 합을 구하라
@@ -39,14 +40,14 @@
 
     console.log(changeMoney)
 
-    //7. ,지우기
+    // 7. ,지우기
     // let money2 = '10,000';
     // let arr = money2.split('');
 
     // for(let i=0; i<arr.length; i++){
     //     if(arr[i]===','){
     //         arr.splice(i,1);
-    //         i--;
+    //         i--; // 원본 배열의 길이가 줄어드니깐 순회하는 횟수의 변화를 유지하기 위해 i--
     //     }
     // }
     // let changeMoney2 = arr.join('');

@@ -37,11 +37,24 @@
 
 // console.log(result4.reverse().join(""));
 
-let money = 10000000;
-    let changeMoney = money.toString();
-    // console.log(typeof changeMoney);
-    for(let i= changeMoney.length-3; i>0; i -= 3){
-        changeMoney = changeMoney.slice(0,i)+','+changeMoney.slice(i);
+function comma(num) {
+    if (num.length <= 3) {
+      return num;
+    } else {
+      return (
+        comma(num.slice(0, num.length - 3)) + "," + num.slice(num.length - 3)
+      );
     }
+  }
+ console.log(comma("1234567"));
 
-    console.log(changeMoney)
+
+// function comma(won) {
+    
+//     for (let i = won.length - 3; i > 0; i -= 3) {
+//         won = won.slice(0, i) + "," + won.slice(i);
+//       console.log(won);
+//     }
+//   }
+  
+//  console.log(comma("1234567")); 
