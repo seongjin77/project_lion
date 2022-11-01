@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div style="display: none">모달창0</div>
+        <div style="display: none">모달창1</div>
+        <div style="display: none">모달창2</div>
+
+        <button>버튼0</button>
+        <button>버튼1</button>
+        <button>버튼2</button>
+        <script>
+            const modal = document.querySelectorAll("div");
+            const btn = document.querySelectorAll("button");
+
+            // btn.forEach((v, i) => {
+            //     v.addEventListener("click", () => {
+            //         modal[i].style.display = "block";
+            //     });
+            // });
+                
+            for (var i = 0; i < 3; i++) {
+                btn[i].addEventListener("click", function () {
+                    //modal[i].style.display = "block";
+                    console.log(i);
+                });
+            }
+         
+        </script>
+    </body>
+</html>
