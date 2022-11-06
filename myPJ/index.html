@@ -56,8 +56,8 @@
     <body>
         <section class="container">
             <h1>To do List</h1>
-            <label for="txt-todo" class="ir"></label>
-            <input id="txttodo" type="text" />
+            <!-- <label for="txt-todo" class="ir"></label> -->
+            <input id="txt-todo" type="text" />
             <button class="btn-plus">+</button>
 
             <section class="todoList-box">
@@ -67,35 +67,65 @@
                     <li>진행중</li>
                     <li>끝남</li>
                 </ul>
-                <ul class="txt-todoList">
-                    <li>
-                        집가기
-                        <div class="wrap">
-                            <button>check</button>
-                            <button>delete</button>
-                        </div>
-                    </li>
-                </ul>
+                <ul class="txt-todoList"></ul>
             </section>
         </section>
-
         <script>
-            // 버튼을 누르면 할일이 추가된다
-            // delete 버튼을 누르면 할일이 삭제된다.
-            // check 버튼을 누르면 항리이 끝나면서 밑줄이 간다.
-            let arr = [];
-            const txtTodoList = document.querySelector(".txt-todoList");
-            const inpTxt = document.querySelector("#txttodo");
-            const btnPlus = document.querySelector(".btn-plus");
-            console.log(inpTxt);
-            console.log(inpTxt.value);
+                // 버튼을 누르면 할일이 추가된다
+                // delete 버튼을 누르면 할일이 삭제된다.
+                // check 버튼을 누르면 항리이 끝나면서 밑줄이 간다.
+                let arr = [];
+                const txtTodoList = document.querySelector(".txt-todoList");
+                const txtTodo = document.querySelector("#txt-todo");
+                const btnPlus = document.querySelector(".btn-plus");
 
-            // btnPlus.addEventListener('click', () => {
-            //    console.log('1');
 
-            // })
 
-            // console.log(arr);
+
+                btnPlus.addEventListener("click", () => {
+                    let task ={
+                        id : uid(),
+                        taskContent : txtTodo.value,
+                        isComplete : false
+                    }
+                    arr.push(task);
+                    render();
+                    console.log(arr);
+                });
+
+
+
+                function render() {
+                    let resultHTML = "";
+                    for (let i = 0; i < arr.length; i++) {
+
+                        resultHTML += `
+                        <li>
+                            ${arr[i].taskContent}
+                            <div class="wrap">
+                                <button class="btncheck">check</button>
+                                <button onclick='deletetxt("${arr[i].id}")'>delete</button>
+                            </div>
+                        </li>
+                        `;
+                    }
+                    txtTodoList.innerHTML = resultHTML;
+         
+                }
+
+                function deletetxt(a){
+                  for(let i=0; i<arr.length; i++ ){
+                    if(arr[i].id === a){
+                        arr.splice(i,1)
+                        break;
+                    }                    
+                  }
+                  render()
+                }
+
+            function uid() {
+              return (performance.now().toString(36)+Math.random().toString(36)).replace(/\./g,"");
+            };
         </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     </body>
