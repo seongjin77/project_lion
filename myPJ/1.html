@@ -5,32 +5,98 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        />
+        <style>
+            .ir {
+                position: absolute;
+                clip-path: inset(50%);
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+            }
+            body {
+                margin: 0;
+                background-color: lightcoral;
+            }
+            ul {
+                margin: 0;
+            }
+            .container {
+                background-color: #fff;
+                min-height: 100vh;
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+                    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+            }
+            .container h1 {
+                text-align: center;
+            }
+            .todoList-box {
+                border: 1px solid #000;
+            }
+            .todoList {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                border-bottom: 1px solid #000;
+            }
+            li {
+                list-style: none;
+                margin-right: 20px;
+            }
+            .txt-todoList li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        </style>
     </head>
     <body>
-        <div style="display: none">모달창0</div>
-        <div style="display: none">모달창1</div>
-        <div style="display: none">모달창2</div>
+        <section class="container">
+            <h1>To do List</h1>
+            <label for="txt-todo" class="ir"></label>
+            <input id="txttodo" type="text" />
+            <button class="btn-plus">+</button>
 
-        <button>버튼0</button>
-        <button>버튼1</button>
-        <button>버튼2</button>
+            <section class="todoList-box">
+                <h2 class="ir">할 일 목록</h2>
+                <ul class="todoList">
+                    <li>모두</li>
+                    <li>진행중</li>
+                    <li>끝남</li>
+                </ul>
+                <ul class="txt-todoList">
+                    <li>
+                        집가기
+                        <div class="wrap">
+                            <button>check</button>
+                            <button>delete</button>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </section>
+
         <script>
-            const modal = document.querySelectorAll("div");
-            const btn = document.querySelectorAll("button");
+            // 버튼을 누르면 할일이 추가된다
+            // delete 버튼을 누르면 할일이 삭제된다.
+            // check 버튼을 누르면 항리이 끝나면서 밑줄이 간다.
+            let arr = [];
+            const txtTodoList = document.querySelector(".txt-todoList");
+            const inpTxt = document.querySelector("#txttodo");
+            const btnPlus = document.querySelector(".btn-plus");
+            console.log(inpTxt);
+            console.log(inpTxt.value);
 
-            // btn.forEach((v, i) => {
-            //     v.addEventListener("click", () => {
-            //         modal[i].style.display = "block";
-            //     });
-            // });
-                
-            for (var i = 0; i < 3; i++) {
-                btn[i].addEventListener("click", function () {
-                    //modal[i].style.display = "block";
-                    console.log(i);
-                });
-            }
-         
+            // btnPlus.addEventListener('click', () => {
+            //    console.log('1');
+
+            // })
+
+            // console.log(arr);
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
