@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            fetch("http://test.api.weniv.co.kr/mall")
+                .then((data) => data.json())
+                .then((data) => {
+                    data.forEach((e) => {
+                        console.log(e.productName);
+                    });
+                    return data;
+                })
+                .then((data) => {
+                    data.filter((x) => x.price >= 10000).forEach((x) =>
+                        console.log("필터링 ", x.productName)
+                    );
+                    return data;
+                })
+                .then((data) => {
+                    const body = document.querySelector('body')
+                    data.map((x) => {
+                        const h2 = document.createElement("h2");
+                        const p = document.createElement("p");
+                        h2.textContent = x.productName;
+                        p.textContent = x.price;
+                        body.appendChild(h2);
+                        body.appendChild(p)
+                        
+                    });
+                });
+
+            // 1. 추가 then을 사용하여 7개의 항목 productName만 출력해보세요.(console.log)
+            // 2. 추가 then을 사용하여 7개의 항목 중 price가 10000원 이상 되는 product를 출력하는 코드를 작성해주세요.(console.log)
+            // 3. 추가 then을 사용하여 7개의 항목의 productName과 price를 각각 h2와 p태그로 생성하여(DOM) 화면에 출력해주세요.
+            // 4. error 처리를 해주세요.
+
+
+                
+
+        </script>
+    </body>
+</html>
