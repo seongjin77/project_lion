@@ -1,24 +1,7 @@
+.bg-img{
+    background-image: url(https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2021%2F09%2Fapple-ar-easter-egg-in-apple-special-event-invite-for-iphone-users-tw.jpg?w=960&cbr=1&q=90&fit=max);
+    height: 300px;
+    background-size: cover;
+    background-position: center;
 
-.nav{
-  height: 100vh;
-
-}
-.title{
-  margin: 0;
-  height: 100px;
-  background-color: lightcoral;
-}
-ul{
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-ul li{
-  list-style: none;
-  margin: 0;
-}
-
-ul li span{
-  margin: 30px;
 }

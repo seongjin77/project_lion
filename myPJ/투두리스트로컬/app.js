@@ -29,8 +29,8 @@ function 삭제버튼(li){
     btn.innerHTML = '<i class="fa-solid fa-trash"></i>'
     btn.addEventListener('click', ()=>{
         li.remove();
-        투두리스트.length= 0
         localStorage.removeItem('Todo');
+        투두리스트.length= 0
         let list = 목록.querySelectorAll('li');
 
         list.forEach(v => {
