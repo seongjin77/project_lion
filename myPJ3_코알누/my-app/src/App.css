@@ -17,3 +17,16 @@
   margin-top: 30px;
   text-align: center;
 }
+
+.이김{
+  border: 5px solid forestgreen;
+}
+
+.졌음{
+  border: 5px solid tomato;
+}
+
+.비겼음{
+  border: 5px solid slategrey;
+}
+

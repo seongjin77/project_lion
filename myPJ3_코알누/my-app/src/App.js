@@ -22,7 +22,7 @@ function App() {
   const [userChoice, setChoice] = useState(null)
   const [computerChoice, setcomputerChoice] = useState(null)
   const [result, setResult] = useState('')
-  const computerResult = result == '비겼음' ? '비겼음' : result == '이김' ? '졌음' : '이김'
+ 
   function play(U_choice){
      setChoice(choice[U_choice])
      let C_choice = ramdom()
@@ -63,7 +63,7 @@ function App() {
     <>
     <div className="App">
       <Box result={result} item={userChoice} title='You'/>
-      <Box result={computerResult} item={computerChoice} title='computer'/>
+      <Box result={result} item={computerChoice} title='computer'/>
     </div>
       <div className='button'>
         <button onClick={() => play('scissor')}>가위</button>
