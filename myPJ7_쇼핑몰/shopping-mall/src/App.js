@@ -13,12 +13,13 @@ function App() {
 
   return (
     <>
+    {data2}
     <Navbar/>
     <Routes>
       <Route path='/' element={<ProductAll/>}/>
       <Route path='/login' element={<Login setAuthenticate={setAuthenticate}/>}/>
       <Route path='/product/:id' element={<PrivateRoute authenticate={authenticate}/>}/>
-    </Routes>
+    </Routes> 
     </>
 
   );
