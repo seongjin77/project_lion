@@ -2,7 +2,13 @@ import React from 'react'
 
 const Test = () => {
   return (
-    <div>Test</div>
+    <div>
+      Test 입니다 확인해주세요
+
+
+    </div>
+
+
   )
 }
 

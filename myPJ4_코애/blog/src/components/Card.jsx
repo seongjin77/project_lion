@@ -1,11 +1,11 @@
 import React from "react";
-import { Nav, Navbar, Container, Row, Col } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 
 const Card = ({ v, i }) => {
-    console.log(v);
+
     return (
  
-                <Col>
+                <Col sm={4}>
                     <img
                         src={`https://codingapple1.github.io/shop/shoes${
                             i + 1
