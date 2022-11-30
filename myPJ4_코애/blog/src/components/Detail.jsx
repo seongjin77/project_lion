@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
 import styled from "styled-components";
-import axios from "axios";
+import {Nav} from 'react-bootstrap';
 
 let TestBtn = styled.button`
     background-color: ${(props) => props.bg};
@@ -16,21 +16,13 @@ let TestBtn2 = styled(TestBtn)`
 
 export const Detail = ({ shoes, setShoes }) => {
     console.log("이건뭐", shoes);
-    // 또 불러올 필요없음.
-    // useState(() => {
-    //     axios
-    //         .get("https://codingapple1.github.io/shop/data2.json")
-    //         .then((data) => {
-    //             let copy = [...shoes, ...data.data];
-    //             setShoes(copy);
-    //         });
-    //     console.log("확인용~!~!");
-    // }, [shoes]);
+
     let { id } = useParams();
 
     // 라우터로 올 시 저장된 상태로 오지 않는다.
     let 찾는상품 = shoes.find((x) => x.id === parseInt(id));
     console.log("찾는상품", 찾는상품);
+
     return (
         <div className="container">
             <TestBtn bg="pink">dddd</TestBtn>
@@ -52,6 +44,21 @@ export const Detail = ({ shoes, setShoes }) => {
                 </div>
             </div>
             <Outlet></Outlet>
+
+            <Nav variant="tabs" defaultActiveKey="link0">
+                <Nav.Item>
+                    <Nav.Link eventKey="link0">버튼0</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link eventKey="link1">버튼1</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link eventKey="link2">버튼2</Nav.Link>
+                </Nav.Item>
+            </Nav>
+            <div>내용0</div>
+            <div>내용1</div>
+            <div>내용2</div>
         </div>
     );
 };

@@ -1,18 +1,22 @@
 /* eslint-disable */
 import "./App.css";
 import { Nav, Navbar, Container, Row, Col } from "react-bootstrap";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import data from "./data";
 import Card from "./components/Card";
 import { Routes, Route } from "react-router-dom";
 import { Detail } from "./components/Detail";
 import { useNavigate } from "react-router-dom";
-import About from "./components/About";
+import Cart from "./components/Cart";
 import Test from "./components/Test";
 import axios from "axios";
 
+// 보관함
+let context1 = createContext();
+
 function App() {
     let [shoes, setShoes] = useState(data);
+    let [재고] = useState();
     let navigate = useNavigate();
     // console.log(shoes);
     return (
@@ -31,6 +35,13 @@ function App() {
                         <Nav.Link
                             onClick={() => {
                                 navigate("/detail/:id");
+                            }}
+                        >
+                            detail
+                        </Nav.Link>
+                        <Nav.Link
+                            onClick={() => {
+                                navigate("/cart");
                             }}
                         >
                             cart
@@ -69,10 +80,10 @@ function App() {
                         </>
                     }
                 ></Route>
-                <Route path="/detail/:id" element={<Detail setShoes={setShoes} shoes={shoes} />}>
+                <Route path="/detail/:id" element={<Detail setShoes={setShoes} shoes={shoes} />}> 
                     <Route path="test" element={<Test />}></Route>
                 </Route>
-                <Route path="/about" element={<About />}></Route>
+                <Route path="/cart" element={<Cart />}></Route>
                 <Route
                     path="*"
                     element={<div>없는 페이지입니다 404</div>}
