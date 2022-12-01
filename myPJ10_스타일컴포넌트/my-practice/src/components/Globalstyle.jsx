@@ -2,8 +2,8 @@ import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     div{
-        width: 300px;
-        height: 300px;
+        width: 500px;
+        height: 1000px;
         background-color: dodgerblue;
         color: white;
     }
