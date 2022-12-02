@@ -2,10 +2,9 @@ import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     div{
-        width: 500px;
+        width: 700px;
         height: 1000px;
         background-color: dodgerblue;
-        color: white;
     }
 
 `
