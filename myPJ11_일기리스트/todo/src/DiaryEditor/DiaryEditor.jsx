@@ -1,15 +1,20 @@
 import React, { useRef, useState } from "react";
 import { DiaryEditorDiv } from "./styled";
 
-const DiaryEditor = () => {
-    
+
+const DiaryEditor = ({setData}) => {
+
     const authorInput = useRef();
     const contentInput = useRef();
     const [state, setState] = useState({
+        id: 0,
         author: "",
         content: "",
         emotion: 1,
+        created_date: new Date().getTime()
     });
+
+
 
     // preventDefault를 하면 제출이 아예 안된다. required 속성이 의미가 없어짐
     const handleSubmit = (e) => {
@@ -20,14 +25,24 @@ const DiaryEditor = () => {
             authorInput.current.focus();
             return;
         }
-        if (state.content.length < 5) {
+        if (state.content.length < 5) { 
             alert("내용은 5글자 이상 써주세요");
             //포커스
             contentInput.current.focus();
             return;
         }
-
-        alert("저장성공");
+        
+    
+       setData((prev) => {
+        return [...prev, {...state,id: Date.now()}]
+       });
+       alert('저장성공')
+       setState({
+        ...state,
+        author: "",
+        content: "",
+        emotion: 1,
+    })
     };
 
     const handleChangeState = (e) => {
@@ -46,6 +61,7 @@ const DiaryEditor = () => {
                     ref={authorInput}
                     name="author"
                     onChange={handleChangeState}
+                    value={state.author}
                     required
                 />
                 <div>
@@ -53,6 +69,7 @@ const DiaryEditor = () => {
                         ref={contentInput}
                         name="content"
                         onChange={handleChangeState}
+                        value={state.content}
                         required
                     />
                 </div>

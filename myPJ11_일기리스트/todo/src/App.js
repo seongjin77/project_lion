@@ -1,37 +1,19 @@
-import {DiaryEditor} from './DiaryEditor/DiaryEditor';
-import DiaryList from './List/DiaryList';
-
-const dummyList = [
-  {
-    id:1,
-    author:'김성진',
-    content:'오늘공부',
-    emotion: 4,
-    created_date: new Date().getTime()
-  },
-  {
-    id:2,
-    author:'정순재',
-    content:'오늘공부',
-    emotion: 4,
-    created_date: new Date().getTime()
-  },
-  {
-    id:3,
-    author:'차세현',
-    content:'오늘공부',
-    emotion: 4,
-    created_date: new Date().getTime()
-  },
-]
+import { useState } from "react";
+import { DiaryEditor } from "./DiaryEditor/DiaryEditor";
+import DiaryList from "./List/DiaryList";
 
 function App() {
-  return (
-    <div className="App">
-        <DiaryEditor/>
-        <DiaryList dummyList={dummyList}/>
-    </div>
-  );
+    const [data, setData] = useState([]);
+    console.log('app의 데이터',data);
+  
+    // { id, author, content, emotion, created_date }
+
+    return (
+        <div className="App">
+            <DiaryEditor setData={setData} />
+            <DiaryList dummyList={data} />
+        </div>
+    );
 }
 
 export default App;
