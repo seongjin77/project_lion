@@ -1,7 +1,19 @@
 import React from "react";
 import DiaryItemDiv from "./styled";
 
-const DiaryItem = ({ id, author, content, emotion, created_date }) => {
+const DiaryItem = ({ id, author, content, emotion, created_date,setData,dummyList }) => {
+
+    console.log('확인용',dummyList);
+
+    const onDelete = (targetid) => {
+
+        setData((prev) => {
+           return prev.filter(v => v.id !== targetid )
+        })
+
+        console.log(targetid);
+    }
+
     return (
         <DiaryItemDiv>
             <span>
@@ -10,7 +22,7 @@ const DiaryItem = ({ id, author, content, emotion, created_date }) => {
             <br />
             <span>{new Date(created_date).toLocaleString()}</span>
             <div>{content}</div>
-            <button onClick={()=>{console.log(id)}}>삭제하기</button>
+            <button onClick={()=>{onDelete(id)}}>삭제하기</button>
         </DiaryItemDiv>
     );
 };
