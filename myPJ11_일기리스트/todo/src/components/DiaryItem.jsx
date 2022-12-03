@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import DiaryItemDiv from "./styled";
 
-const DiaryItem = ({ id, author, content, emotion, created_date,setData,dummyList }) => {
+const DiaryItem = ({ id, author, content, emotion, created_date, setData }) => {
+    const [isEdit, setIsEdit] = useState(false);
+    const onRevise = () => setIsEdit(!isEdit);
 
-    console.log('확인용',dummyList);
+    const editCancle = () => {
+        setIsEdit(!isEdit);
+        setLocalContent(content);
+    }; // 수정 취소
 
-    const onDelete = (targetid) => {
+    const onEdit = (targetId, newContent) => {
+        setData((prev) =>  prev.map((v) => v.id === targetId ? { ...v, content: newContent } : v)
+        );
+        setIsEdit(!isEdit);
+        console.log("작동");
+    }; // 수정 완료
 
+    const [localContent, setLocalContent] = useState(content);
+
+    const onRemove = (targetid) => {
         setData((prev) => {
-           return prev.filter(v => v.id !== targetid )
-        })
-
-        console.log(targetid);
-    }
+            return prev.filter((v) => v.id !== targetid);
+        });
+    };
 
     return (
         <DiaryItemDiv>
@@ -21,8 +32,43 @@ const DiaryItem = ({ id, author, content, emotion, created_date,setData,dummyLis
             </span>
             <br />
             <span>{new Date(created_date).toLocaleString()}</span>
-            <div>{content}</div>
-            <button onClick={()=>{onDelete(id)}}>삭제하기</button>
+            <div>
+                {isEdit ? (
+                    <>
+                        <textarea
+                            onChange={(e) => setLocalContent(e.target.value)}
+                            name=""
+                            id=""
+                            cols="60"
+                            rows="5"
+                            value={localContent}
+                        ></textarea>
+                    </>
+                ) : (
+                    <>{content}</>
+                )}
+            </div>
+            {isEdit ? (
+                <>
+                    <button onClick={editCancle}>수정 취소</button>
+                    <button onClick={() => {
+                        onEdit(id, localContent)
+                    }}>
+                        수정 완료
+                    </button>
+                </>
+            ) : (
+                <>
+                    <button
+                        onClick={() => {
+                            onRemove(id);
+                        }}
+                    >
+                        삭제하기
+                    </button>
+                    <button onClick={onRevise}>수정하기</button>
+                </>
+            )}
         </DiaryItemDiv>
     );
 };

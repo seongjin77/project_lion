@@ -16,7 +16,7 @@ const DiaryList = ({ dummyList,setData}) => {
             {dummyList.map((it) => (
 // fragment로 감싸주어도 최상단에 key 값이 없으면 오류가 뜸
                 // 컴포넌트를 내릴때 프로퍼티를 안쓰고 스프레드 연산자를 써서 내릴 수 있다.
-                <DiaryItem key={it.id} setData={setData}  dummyList={dummyList} {...it} />
+                <DiaryItem key={it.id} setData={setData} {...it} />
             ))}
         
 
