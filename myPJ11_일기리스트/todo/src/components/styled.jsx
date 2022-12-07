@@ -9,7 +9,6 @@ const DiaryItemDiv = styled.div`
     span{
         margin-bottom:10px;
         display:inline-block;
-        
     }
 
     br + span{
