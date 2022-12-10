@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-    {data2}
+    
     <Navbar/>
     <Routes>
       <Route path='/' element={<ProductAll/>}/>

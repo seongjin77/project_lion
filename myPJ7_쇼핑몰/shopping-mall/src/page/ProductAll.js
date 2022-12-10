@@ -4,11 +4,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
 
 const ProductAll = () => {
-
-  const [query,setQuery] = useSearchParams();
-  const [productList, setProductList] = useState([]);
-  const getProduct = async () => {
-        let searchQuery = query.get('q') || '';
+    const [query, setQuery] = useSearchParams();
+    const [productList, setProductList] = useState([]);
+    
+    const getProduct = async () => {
+        let searchQuery = query.get("q") || "";
 
         let url = `http://localhost:4000/products/?q=${searchQuery}`;
         let response = await fetch(url);

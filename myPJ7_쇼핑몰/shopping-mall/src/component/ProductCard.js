@@ -14,7 +14,7 @@ const ProductCard = ({item}) => {
 
   return (
     <div className='productcard-item' onClick={showDetail}>
-        <img style={style} src={item?.img}></img>
+        <img style={style} src={item?.img} alt=''></img>
         <p>{item?.title}</p>
         <p>{item?.price}</p>
         <p>{item?.new === true? '신제품' : ''}</p>
